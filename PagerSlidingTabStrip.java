@@ -101,8 +101,8 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     private int lastScrollX = 0;
 
-    private int tabBackgroundResId = R.drawable.btn_used_offer_xxmedium;
-    private int tabActiveBackgroundResId = R.drawable.btn_red_rounded_xxmedium;
+    private int tabBackgroundResId = R.drawable.bg_inactive_tab;//Replace drawable with your inactive tab
+    private int tabActiveBackgroundResId = R.drawable.bg_active_tab;//Replace drawable with your active tab
 
 
     private Locale locale;
@@ -184,8 +184,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         dividerPaint.setStrokeWidth(dividerWidth);
 
         defaultTabLayoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
-        //defaultTabLayoutParams.setMarginStart(tabPadding);
-        defaultTabLayoutParams.setMarginEnd(tabPadding);
+        defaultTabLayoutParams.setMarginEnd(tabPadding);// Remove if spacing between tabs is not required.
         expandedTabLayoutParams = new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1.0f);
 
         if (locale == null) {
